@@ -17,6 +17,7 @@
 		9C9A97BA238E1424007DEFF9 /* WorkOutAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A97B9238E1424007DEFF9 /* WorkOutAppUITests.swift */; };
 		9C9A97C8238E30C9007DEFF9 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A97C7238E30C8007DEFF9 /* VideoCell.swift */; };
 		9C9A97CA238E31E3007DEFF9 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A97C9238E31E3007DEFF9 /* Video.swift */; };
+		A8BC88BB239A586300402BA9 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC88BA239A586300402BA9 /* CameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9C9A97BB238E1424007DEFF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C9A97C7238E30C8007DEFF9 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		9C9A97C9238E31E3007DEFF9 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A8BC88BA239A586300402BA9 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				9C9A9797238E141E007DEFF9 /* AppDelegate.swift */,
 				9C9A9799238E141E007DEFF9 /* SceneDelegate.swift */,
 				9C9A979B238E141E007DEFF9 /* ViewController.swift */,
+				A8BC88BA239A586300402BA9 /* CameraController.swift */,
 				9C9A979D238E141E007DEFF9 /* Main.storyboard */,
 				9C9A97A0238E1424007DEFF9 /* Assets.xcassets */,
 				9C9A97A2238E1424007DEFF9 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8BC88BB239A586300402BA9 /* CameraController.swift in Sources */,
 				9C9A979C238E141E007DEFF9 /* ViewController.swift in Sources */,
 				9C9A97C8238E30C9007DEFF9 /* VideoCell.swift in Sources */,
 				9C9A9798238E141E007DEFF9 /* AppDelegate.swift in Sources */,
@@ -443,7 +447,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R48T285ASH;
 				INFOPLIST_FILE = WorkOutApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +466,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R48T285ASH;
 				INFOPLIST_FILE = WorkOutApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

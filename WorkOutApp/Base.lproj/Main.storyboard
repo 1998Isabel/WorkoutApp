@@ -53,7 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Uw-Fs-xZI">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Workout" textAlignment="center" minimumFontSize="17" id="wSF-6I-kYx">
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Workout" textAlignment="center" minimumFontSize="17" id="wSF-6I-kYx">
                             <rect key="frame" x="143.5" y="7" width="88" height="30.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -73,7 +73,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorkOutApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -159,8 +158,9 @@
                         <outlet property="tableView" destination="PvC-At-cFn" id="bcH-34-oK6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2724" y="169.56521739130437"/>
+            <point key="canvasLocation" x="2708" y="-234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1k2-zH-S8d">
@@ -183,7 +183,6 @@
         <!--View Controller-->
         <scene sceneID="N2Y-2Y-gZJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3ah-Fe-Obs" sceneMemberID="firstResponder"/>
                 <viewController id="aAI-el-Y6I" customClass="ViewController" customModule="WorkOutApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g48-dd-jml">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -264,52 +263,84 @@
                         <outlet property="tableView" destination="hiA-cz-u7P" id="YNZ-YA-Db4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ah-Fe-Obs" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3564" y="170"/>
+            <point key="canvasLocation" x="3591" y="282"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera Controller-->
         <scene sceneID="uaw-I2-iHM">
             <objects>
-                <viewController id="275-PU-mcY" sceneMemberID="viewController">
+                <viewController id="275-PU-mcY" customClass="CameraController" customModule="WorkOutApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJc-cZ-QFA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEV-ot-shO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBJ-dS-G52">
                                 <rect key="frame" x="157.5" y="547" width="60" height="60"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="4FD-jS-BH4"/>
                                     <constraint firstAttribute="width" constant="60" id="FDx-r3-ZS6"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Kkz-D0-Cbl"/>
                                 </constraints>
                                 <state key="normal" image="1200px-Button_Icon_White.svg"/>
+                                <connections>
+                                    <action selector="imageCapture:" destination="275-PU-mcY" eventType="touchUpInside" id="7xf-FT-jHn"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="BBJ-dS-G52" firstAttribute="centerX" secondItem="rJc-cZ-QFA" secondAttribute="centerX" id="0ez-KQ-kup"/>
-                            <constraint firstItem="tdw-5M-QuS" firstAttribute="bottom" secondItem="BBJ-dS-G52" secondAttribute="bottom" constant="60" id="kGX-rm-aO6"/>
+                            <constraint firstItem="tdw-5M-QuS" firstAttribute="bottom" secondItem="BBJ-dS-G52" secondAttribute="bottom" constant="60" id="LNF-uU-CUX"/>
+                            <constraint firstItem="xEV-ot-shO" firstAttribute="trailing" secondItem="tdw-5M-QuS" secondAttribute="trailing" id="TgB-P2-Xnh"/>
+                            <constraint firstItem="xEV-ot-shO" firstAttribute="leading" secondItem="tdw-5M-QuS" secondAttribute="leading" id="VlI-Xb-Yuy"/>
+                            <constraint firstItem="BBJ-dS-G52" firstAttribute="centerX" secondItem="rJc-cZ-QFA" secondAttribute="centerX" id="aCo-3d-7jl"/>
+                            <constraint firstItem="xEV-ot-shO" firstAttribute="bottom" secondItem="tdw-5M-QuS" secondAttribute="bottom" id="cEY-Aj-L1v"/>
+                            <constraint firstItem="xEV-ot-shO" firstAttribute="top" secondItem="rJc-cZ-QFA" secondAttribute="top" id="kwI-PJ-q1v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tdw-5M-QuS"/>
                     </view>
                     <navigationItem key="navigationItem" id="ctQ-g3-8vk">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Workout" textAlignment="center" minimumFontSize="17" id="xay-DE-bWv">
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Workout" textAlignment="center" minimumFontSize="17" id="xay-DE-bWv">
+                            <rect key="frame" x="143.5" y="7" width="88" height="30.5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="pause" id="93u-CQ-ljF"/>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="pause" id="93u-CQ-ljF"/>
+                            <barButtonItem style="plain" id="gZH-wj-y1R">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xve-Zk-N8W">
+                                    <rect key="frame" x="100" y="517" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="04l-Rk-fZC"/>
+                                        <constraint firstAttribute="width" constant="30" id="vZz-84-10e"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <state key="normal" image="camera.rotate" catalog="system"/>
+                                    <connections>
+                                        <action selector="rotateCamera:" destination="275-PU-mcY" eventType="touchUpInside" id="TEG-Dr-dzo"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cameraView" destination="xEV-ot-shO" id="aUp-5y-Kd0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uw-le-bLf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4350" y="170"/>
+            <point key="canvasLocation" x="4452" y="280.20989505247377"/>
         </scene>
     </scenes>
     <resources>
         <image name="1200px-Button_Icon_White.svg" width="1200" height="1200"/>
+        <image name="camera.rotate" catalog="system" width="64" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CM7-c8-Md1"/>
