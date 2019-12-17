@@ -255,7 +255,8 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="play" id="53R-do-zKB">
                             <connections>
-                                <segue destination="275-PU-mcY" kind="show" id="9qH-IJ-dUa"/>
+                                <action selector="playButton:" destination="aAI-el-Y6I" id="vGe-HR-ayZ"/>
+                                <segue destination="275-PU-mcY" kind="show" id="1Gj-p9-XRo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -314,7 +315,7 @@
                             <barButtonItem style="plain" systemItem="pause" id="93u-CQ-ljF"/>
                             <barButtonItem style="plain" id="gZH-wj-y1R">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xve-Zk-N8W">
-                                    <rect key="frame" x="100" y="517" width="30" height="30"/>
+                                    <rect key="frame" x="293" y="5" width="30" height="34"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="04l-Rk-fZC"/>
@@ -335,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uw-le-bLf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4452" y="280.20989505247377"/>
+            <point key="canvasLocation" x="4521" y="281"/>
         </scene>
     </scenes>
     <resources>

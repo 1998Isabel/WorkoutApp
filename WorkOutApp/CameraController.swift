@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class CameraController: UIViewController {
 
@@ -17,9 +18,27 @@ class CameraController: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
     var backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-        
+    
+    let playerViewController = AVPlayerViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        playVideo()
+//        print("Play Action!!!!!!!")
+//        if let path = Bundle.main.path(forResource: "video1", ofType: "mp4") {
+//            let video = AVPlayer(url: URL(fileURLWithPath: path))
+//            let videoPlayer = AVPlayerViewController()
+//            videoPlayer.player = video
+//
+//            func playerDidFinishPlaying(note: NSNotification) {
+//             videoPlayer.dismiss(animated: true)
+//            }
+//            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: videoPlayer.player?.currentItem)
+//
+//            present(videoPlayer, animated: true) {
+//                video.play()
+//            }
+//        }
         
         if #available(iOS 10.2, *) {
             let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
@@ -38,6 +57,24 @@ class CameraController: UIViewController {
             }
         }
     }
+    
+    func playVideo() {
+
+        let path = Bundle.main.path(forResource: "video1", ofType: "mp4")!
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+
+        playerViewController.player = player
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerViewController.player?.currentItem)
+
+        self.present(playerViewController, animated: true) {
+            self.playerViewController.player!.play()
+        }
+    }
+
+
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+            self.playerViewController.dismiss(animated: true)
+           }
     
 
     @IBAction func imageCapture(_ sender: Any) {

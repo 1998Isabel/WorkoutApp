@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController {
     
@@ -18,7 +19,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         videos = createArray()
-        
     }
     
     func createArray() -> [Video] {
@@ -45,7 +45,6 @@ class ViewController: UIViewController {
         
         return tempVideos
     }
-
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
