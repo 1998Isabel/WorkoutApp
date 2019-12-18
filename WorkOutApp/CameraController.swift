@@ -27,6 +27,8 @@ class CameraController: UIViewController {
         
         loadGif()
         
+        ShowMuscle()
+        
         if #available(iOS 10.2, *) {
             let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
             do {
@@ -67,7 +69,18 @@ class CameraController: UIViewController {
             self.view.frame.size.width - 40, height: 300.0)
         view.addSubview(imageView)
     }
-
+    
+    @IBOutlet weak var MuscleText: UITextView!
+    func ShowMuscle() {
+//        let popup = UIView(frame: CGRect(x:100,y:200,width:200,height:200))
+//        let lb = UILabel(frame: CGRect(x:100,y:200,width:200,height:200))
+//        lb.text = "anything"
+//        popup.backgroundColor = UIColor.red
+        MuscleText.text = "Test...."
+        view.addSubview(MuscleText)
+//        popup.addSubview(lb)
+//        lb.center = popup.center
+    }
 
     @objc func playerDidFinishPlaying(note: NSNotification) {
             self.playerViewController.dismiss(animated: true)
