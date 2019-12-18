@@ -24,21 +24,8 @@ class CameraController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playVideo()
-//        print("Play Action!!!!!!!")
-//        if let path = Bundle.main.path(forResource: "video1", ofType: "mp4") {
-//            let video = AVPlayer(url: URL(fileURLWithPath: path))
-//            let videoPlayer = AVPlayerViewController()
-//            videoPlayer.player = video
-//
-//            func playerDidFinishPlaying(note: NSNotification) {
-//             videoPlayer.dismiss(animated: true)
-//            }
-//            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: videoPlayer.player?.currentItem)
-//
-//            present(videoPlayer, animated: true) {
-//                video.play()
-//            }
-//        }
+        
+        loadGif()
         
         if #available(iOS 10.2, *) {
             let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
@@ -51,6 +38,7 @@ class CameraController: UIViewController {
                 videoPreviewLayer?.frame = view.layer.bounds
                 cameraView.layer.addSublayer(videoPreviewLayer!)
                 captureSession?.startRunning()
+                
             }
             catch {
                 print("Error: Cannot load camera")
@@ -69,6 +57,15 @@ class CameraController: UIViewController {
         self.present(playerViewController, animated: true) {
             self.playerViewController.player!.play()
         }
+    }
+    
+    func loadGif() {
+        let imageData = try? Data(contentsOf: Bundle.main.url(forResource: "tenor", withExtension: "gif")!)
+        let advTimeGif = UIImage.gifImageWithData(imageData!)
+        let imageView = UIImageView(image: advTimeGif)
+        imageView.frame = CGRect(x: 20.0, y: 200.0, width:
+            self.view.frame.size.width - 40, height: 300.0)
+        view.addSubview(imageView)
     }
 
 
