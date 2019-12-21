@@ -18,6 +18,7 @@
 		9C9A97C8238E30C9007DEFF9 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A97C7238E30C8007DEFF9 /* VideoCell.swift */; };
 		9C9A97CA238E31E3007DEFF9 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A97C9238E31E3007DEFF9 /* Video.swift */; };
 		9CE98D1E23A8F9A30058D598 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9CE98D1D23A8F9A30058D598 /* video1.mp4 */; };
+		A87A7EC523AE7EA80097E826 /* GIFF.gif in Resources */ = {isa = PBXBuildFile; fileRef = A87A7EC423AE7EA80097E826 /* GIFF.gif */; };
 		A8BC88BB239A586300402BA9 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC88BA239A586300402BA9 /* CameraController.swift */; };
 		A8F2082123A91281004E0204 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2082023A91281004E0204 /* iOSDevCenters+GIF.swift */; };
 		A8F2082323A9166A004E0204 /* tenor.gif in Resources */ = {isa = PBXBuildFile; fileRef = A8F2082223A9166A004E0204 /* tenor.gif */; };
@@ -58,6 +59,7 @@
 		9C9A97C7238E30C8007DEFF9 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		9C9A97C9238E31E3007DEFF9 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		9CE98D1D23A8F9A30058D598 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		A87A7EC423AE7EA80097E826 /* GIFF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GIFF.gif; sourceTree = "<group>"; };
 		A8BC88BA239A586300402BA9 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		A8F2082023A91281004E0204 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		A8F2082223A9166A004E0204 /* tenor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tenor.gif; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		9C9A978B238E141E007DEFF9 = {
 			isa = PBXGroup;
 			children = (
+				A87A7EC423AE7EA80097E826 /* GIFF.gif */,
 				A8F2082223A9166A004E0204 /* tenor.gif */,
 				9CE98D1D23A8F9A30058D598 /* video1.mp4 */,
 				9C9A9796238E141E007DEFF9 /* WorkOutApp */,
@@ -255,6 +258,7 @@
 				9C9A97A1238E1424007DEFF9 /* Assets.xcassets in Resources */,
 				9C9A979F238E141E007DEFF9 /* Main.storyboard in Resources */,
 				9CE98D1E23A8F9A30058D598 /* video1.mp4 in Resources */,
+				A87A7EC523AE7EA80097E826 /* GIFF.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,14 +463,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R6RR77W3CD;
+				DEVELOPMENT_TEAM = R48T285ASH;
 				INFOPLIST_FILE = WorkOutApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = isabel12.WorkOutApp;
+				PRODUCT_BUNDLE_IDENTIFIER = isabel11.WorkOutApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,14 +482,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R6RR77W3CD;
+				DEVELOPMENT_TEAM = R48T285ASH;
 				INFOPLIST_FILE = WorkOutApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = isabel12.WorkOutApp;
+				PRODUCT_BUNDLE_IDENTIFIER = isabel11.WorkOutApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

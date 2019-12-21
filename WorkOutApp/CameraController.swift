@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import ReplayKit
 
 class CameraController: UIViewController {
 
@@ -23,11 +24,11 @@ class CameraController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playVideo()
+        playVideo(name: "video1")
         
-        loadGif()
+        loadGif(name: "GIFF")
         
-        ShowMuscle()
+        ShowMuscle(text: "Test....")
         
         if #available(iOS 10.2, *) {
             let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
@@ -48,9 +49,9 @@ class CameraController: UIViewController {
         }
     }
     
-    func playVideo() {
+    func playVideo(name: String) {
 
-        let path = Bundle.main.path(forResource: "video1", ofType: "mp4")!
+        let path = Bundle.main.path(forResource: name, ofType: "mp4")!
         let player = AVPlayer(url: URL(fileURLWithPath: path))
 
         playerViewController.player = player
@@ -61,8 +62,8 @@ class CameraController: UIViewController {
         }
     }
     
-    func loadGif() {
-        let imageData = try? Data(contentsOf: Bundle.main.url(forResource: "tenor", withExtension: "gif")!)
+    func loadGif(name: String) {
+        let imageData = try? Data(contentsOf: Bundle.main.url(forResource: name, withExtension: "gif")!)
         let advTimeGif = UIImage.gifImageWithData(imageData!)
         let imageView = UIImageView(image: advTimeGif)
         imageView.frame = CGRect(x: 20.0, y: 200.0, width:
@@ -71,12 +72,13 @@ class CameraController: UIViewController {
     }
     
     @IBOutlet weak var MuscleText: UITextView!
-    func ShowMuscle() {
+    func ShowMuscle(text: String) {
 //        let popup = UIView(frame: CGRect(x:100,y:200,width:200,height:200))
 //        let lb = UILabel(frame: CGRect(x:100,y:200,width:200,height:200))
 //        lb.text = "anything"
 //        popup.backgroundColor = UIColor.red
-        MuscleText.text = "Test...."
+        MuscleText.text = text
+
         view.addSubview(MuscleText)
 //        popup.addSubview(lb)
 //        lb.center = popup.center
@@ -84,10 +86,53 @@ class CameraController: UIViewController {
 
     @objc func playerDidFinishPlaying(note: NSNotification) {
             self.playerViewController.dismiss(animated: true)
-           }
+    }
     
-
-    @IBAction func imageCapture(_ sender: Any) {
+    let recorder = RPScreenRecorder.shared()
+        private var isRecording = false
+    
+    
+    @IBAction func recordBtnTapped(_ sender: Any) {
+        if !isRecording {
+            startRecording()
+        } else {
+            stopRecording()
+        }
+    }
+    
+    func startRecording() {
+        guard recorder.isAvailable else {
+            print("Recording is not available at this time.")
+            return
+        }
+        
+        let pause = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(recordBtnTapped(_:)))
+        
+        self.navigationItem.rightBarButtonItem = pause
+        
+        
+        recorder.startRecording{ (error) in
+            if let error = error {
+                print(error)
+            }
+            self.isRecording = true
+        }
+    }
+    
+    func stopRecording() {
+        let play = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(recordBtnTapped(_:)))
+        self.navigationItem.rightBarButtonItem = play
+        
+        recorder.stopRecording{ (previewVC, error) in
+            if let previewVC = previewVC {
+                previewVC.previewControllerDelegate = self
+                self.present(previewVC, animated: true, completion: nil)
+            }
+            if let error = error {
+                print(error)
+            }
+            self.isRecording = false
+        }
     }
     
     func switchToFrontCamera() {
@@ -144,4 +189,10 @@ class CameraController: UIViewController {
     }
 
 
+}
+
+extension CameraController: RPPreviewViewControllerDelegate {
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

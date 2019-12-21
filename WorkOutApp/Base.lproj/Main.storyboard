@@ -291,24 +291,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBJ-dS-G52">
-                                <rect key="frame" x="157.5" y="547" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4FD-jS-BH4"/>
-                                    <constraint firstAttribute="width" constant="60" id="FDx-r3-ZS6"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Kkz-D0-Cbl"/>
-                                </constraints>
-                                <state key="normal" image="1200px-Button_Icon_White.svg"/>
-                                <connections>
-                                    <action selector="imageCapture:" destination="275-PU-mcY" eventType="touchUpInside" id="7xf-FT-jHn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="tdw-5M-QuS" firstAttribute="bottom" secondItem="BBJ-dS-G52" secondAttribute="bottom" constant="60" id="LNF-uU-CUX"/>
                             <constraint firstItem="xEV-ot-shO" firstAttribute="trailing" secondItem="tdw-5M-QuS" secondAttribute="trailing" id="TgB-P2-Xnh"/>
                             <constraint firstItem="xEV-ot-shO" firstAttribute="leading" secondItem="tdw-5M-QuS" secondAttribute="leading" id="VlI-Xb-Yuy"/>
-                            <constraint firstItem="BBJ-dS-G52" firstAttribute="centerX" secondItem="rJc-cZ-QFA" secondAttribute="centerX" id="aCo-3d-7jl"/>
                             <constraint firstItem="xEV-ot-shO" firstAttribute="bottom" secondItem="tdw-5M-QuS" secondAttribute="bottom" id="cEY-Aj-L1v"/>
                             <constraint firstItem="xEV-ot-shO" firstAttribute="top" secondItem="rJc-cZ-QFA" secondAttribute="top" id="kwI-PJ-q1v"/>
                         </constraints>
@@ -323,10 +309,14 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" systemItem="pause" id="93u-CQ-ljF"/>
+                            <barButtonItem style="plain" systemItem="play" id="93u-CQ-ljF">
+                                <connections>
+                                    <action selector="recordBtnTapped:" destination="275-PU-mcY" id="0g3-ku-a3s"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem style="plain" id="gZH-wj-y1R">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xve-Zk-N8W">
-                                    <rect key="frame" x="293" y="5" width="30" height="34"/>
+                                    <rect key="frame" x="291.5" y="5" width="30" height="34"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="04l-Rk-fZC"/>
@@ -352,7 +342,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1200px-Button_Icon_White.svg" width="1200" height="1200"/>
         <image name="camera.rotate" catalog="system" width="64" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
