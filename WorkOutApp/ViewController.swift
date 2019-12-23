@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     func createArray() -> [Video] {
         var tempVideos: [Video] = []
-        let video1 = Video(image: #imageLiteral(resourceName: "knee_tuck_crunches"), title: "knee tuck crunches")
+        let video1 = Video(image: #imageLiteral(resourceName: "bicep_curls"), title: "bicep curls")
         let video2 = Video(image: #imageLiteral(resourceName: "leg_pulls_facing_down"), title: "leg pulls facing down")
         let video3 = Video(image: #imageLiteral(resourceName: "leg_pulls_facing_up"), title: "leg pulls facing up")
         let video4 = Video(image: #imageLiteral(resourceName: "oblique_crunch"), title: "oblique crunch")
@@ -59,7 +59,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! VideoCell
         
         cell.setVideo(video: video)
-        
+        cell.cellDelegate = self
+        cell.index = indexPath
+        if (indexPath.row == 0){
+            print(cell)
+        }
         return cell
+    }
+}
+
+extension ViewController: VideoViewNew {
+    func addVideo(index: Int) {
+        print("\(index) is clicked.")
+        MyList.listVideos.append(videos[index])
+        print("\(MyList.listVideos.count) videos are in MyList!")
     }
 }

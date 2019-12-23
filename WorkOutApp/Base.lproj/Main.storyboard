@@ -35,6 +35,9 @@
                                         <rect key="frame" x="0.0" y="196" width="153" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Upper body"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="dmP-Hp-CwS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THr-Kl-eTe">
                                         <rect key="frame" x="0.0" y="294" width="153" height="48"/>
@@ -107,6 +110,9 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKL-Ra-Zsw">
                                                     <rect key="frame" x="329" y="33" width="25" height="24"/>
+                                                    <connections>
+                                                        <action selector="AddButton:" destination="3XK-lJ-APw" eventType="touchUpInside" id="bJE-nZ-nEF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -180,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="948" y="170"/>
         </scene>
-        <!--View Controller-->
+        <!--My List View Controller-->
         <scene sceneID="N2Y-2Y-gZJ">
             <objects>
-                <viewController id="aAI-el-Y6I" customClass="ViewController" customModule="WorkOutApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aAI-el-Y6I" customClass="MyListViewController" customModule="WorkOutApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g48-dd-jml">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" id="pdJ-01-ZSh" customClass="VideoCell" customModule="WorkOutApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListVideoCell" id="pdJ-01-ZSh" customClass="ListVideoCell" customModule="WorkOutApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pdJ-01-ZSh" id="86h-gY-mLi">
@@ -225,8 +231,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="videoTitleLable" destination="PzI-1g-4ys" id="yFy-Rt-JEW"/>
-                                            <outlet property="videoimageView" destination="Kcr-rw-qvs" id="c9O-jr-VBg"/>
+                                            <outlet property="listvideoTitleLable" destination="PzI-1g-4ys" id="gUc-yc-sRa"/>
+                                            <outlet property="listvideoimageView" destination="Kcr-rw-qvs" id="btp-Us-4EB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -261,7 +267,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="hiA-cz-u7P" id="YNZ-YA-Db4"/>
+                        <outlet property="tableView" destination="hiA-cz-u7P" id="DFl-Ab-Ijq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ah-Fe-Obs" sceneMemberID="firstResponder"/>
@@ -288,6 +294,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="knee_tuck_crunches" translatesAutoresizingMaskIntoConstraints="NO" id="aMi-IW-ETc">
+                                        <rect key="frame" x="96" y="244" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -343,8 +353,10 @@
     </scenes>
     <resources>
         <image name="camera.rotate" catalog="system" width="64" height="48"/>
+        <image name="knee_tuck_crunches" width="396" height="222"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CM7-c8-Md1"/>
+        <segue reference="dmP-Hp-CwS"/>
     </inferredMetricsTieBreakers>
 </document>

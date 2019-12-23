@@ -18,10 +18,15 @@
 		9C9A97C8238E30C9007DEFF9 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A97C7238E30C8007DEFF9 /* VideoCell.swift */; };
 		9C9A97CA238E31E3007DEFF9 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A97C9238E31E3007DEFF9 /* Video.swift */; };
 		9CE98D1E23A8F9A30058D598 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9CE98D1D23A8F9A30058D598 /* video1.mp4 */; };
-		A87A7EC523AE7EA80097E826 /* GIFF.gif in Resources */ = {isa = PBXBuildFile; fileRef = A87A7EC423AE7EA80097E826 /* GIFF.gif */; };
+		A8B46B0F23B0661D005B30A7 /* ParticlePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B46B0E23B0661D005B30A7 /* ParticlePeripheral.swift */; };
+		A8B46B1123B072FE005B30A7 /* squat_side_lifts_pose.gif in Resources */ = {isa = PBXBuildFile; fileRef = A8B46B1023B072FE005B30A7 /* squat_side_lifts_pose.gif */; };
+		A8B46B1323B078A2005B30A7 /* pose.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B46B1223B078A2005B30A7 /* pose.png */; };
+		A8B46B1723B0BA8F005B30A7 /* bicep_curls.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = A8B46B1623B0BA8F005B30A7 /* bicep_curls.MP4 */; };
+		A8B46B1923B0BBE4005B30A7 /* bicep_curls_pose-3.gif in Resources */ = {isa = PBXBuildFile; fileRef = A8B46B1823B0BBE4005B30A7 /* bicep_curls_pose-3.gif */; };
+		A8B46B1B23B0BCF1005B30A7 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B46B1A23B0BCF1005B30A7 /* MyListViewController.swift */; };
+		A8B46B1D23B0C741005B30A7 /* ListVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B46B1C23B0C741005B30A7 /* ListVideoCell.swift */; };
 		A8BC88BB239A586300402BA9 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC88BA239A586300402BA9 /* CameraController.swift */; };
 		A8F2082123A91281004E0204 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2082023A91281004E0204 /* iOSDevCenters+GIF.swift */; };
-		A8F2082323A9166A004E0204 /* tenor.gif in Resources */ = {isa = PBXBuildFile; fileRef = A8F2082223A9166A004E0204 /* tenor.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +64,15 @@
 		9C9A97C7238E30C8007DEFF9 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		9C9A97C9238E31E3007DEFF9 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		9CE98D1D23A8F9A30058D598 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
-		A87A7EC423AE7EA80097E826 /* GIFF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GIFF.gif; sourceTree = "<group>"; };
+		A8B46B0E23B0661D005B30A7 /* ParticlePeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlePeripheral.swift; sourceTree = "<group>"; };
+		A8B46B1023B072FE005B30A7 /* squat_side_lifts_pose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = squat_side_lifts_pose.gif; sourceTree = "<group>"; };
+		A8B46B1223B078A2005B30A7 /* pose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pose.png; sourceTree = "<group>"; };
+		A8B46B1623B0BA8F005B30A7 /* bicep_curls.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bicep_curls.MP4; sourceTree = "<group>"; };
+		A8B46B1823B0BBE4005B30A7 /* bicep_curls_pose-3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "bicep_curls_pose-3.gif"; sourceTree = "<group>"; };
+		A8B46B1A23B0BCF1005B30A7 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		A8B46B1C23B0C741005B30A7 /* ListVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVideoCell.swift; sourceTree = "<group>"; };
 		A8BC88BA239A586300402BA9 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		A8F2082023A91281004E0204 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
-		A8F2082223A9166A004E0204 /* tenor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tenor.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +103,10 @@
 		9C9A978B238E141E007DEFF9 = {
 			isa = PBXGroup;
 			children = (
-				A87A7EC423AE7EA80097E826 /* GIFF.gif */,
-				A8F2082223A9166A004E0204 /* tenor.gif */,
+				A8B46B1823B0BBE4005B30A7 /* bicep_curls_pose-3.gif */,
+				A8B46B1623B0BA8F005B30A7 /* bicep_curls.MP4 */,
+				A8B46B1223B078A2005B30A7 /* pose.png */,
+				A8B46B1023B072FE005B30A7 /* squat_side_lifts_pose.gif */,
 				9CE98D1D23A8F9A30058D598 /* video1.mp4 */,
 				9C9A9796238E141E007DEFF9 /* WorkOutApp */,
 				9C9A97AD238E1424007DEFF9 /* WorkOutAppTests */,
@@ -120,12 +132,15 @@
 				9C9A9799238E141E007DEFF9 /* SceneDelegate.swift */,
 				9C9A979B238E141E007DEFF9 /* ViewController.swift */,
 				A8BC88BA239A586300402BA9 /* CameraController.swift */,
+				A8B46B0E23B0661D005B30A7 /* ParticlePeripheral.swift */,
 				A8F2082023A91281004E0204 /* iOSDevCenters+GIF.swift */,
 				9C9A979D238E141E007DEFF9 /* Main.storyboard */,
+				A8B46B1A23B0BCF1005B30A7 /* MyListViewController.swift */,
 				9C9A97A0238E1424007DEFF9 /* Assets.xcassets */,
 				9C9A97A2238E1424007DEFF9 /* LaunchScreen.storyboard */,
 				9C9A97A5238E1424007DEFF9 /* Info.plist */,
 				9C9A97C7238E30C8007DEFF9 /* VideoCell.swift */,
+				A8B46B1C23B0C741005B30A7 /* ListVideoCell.swift */,
 				9C9A97C9238E31E3007DEFF9 /* Video.swift */,
 			);
 			path = WorkOutApp;
@@ -253,12 +268,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8F2082323A9166A004E0204 /* tenor.gif in Resources */,
 				9C9A97A4238E1424007DEFF9 /* LaunchScreen.storyboard in Resources */,
 				9C9A97A1238E1424007DEFF9 /* Assets.xcassets in Resources */,
 				9C9A979F238E141E007DEFF9 /* Main.storyboard in Resources */,
 				9CE98D1E23A8F9A30058D598 /* video1.mp4 in Resources */,
-				A87A7EC523AE7EA80097E826 /* GIFF.gif in Resources */,
+				A8B46B1723B0BA8F005B30A7 /* bicep_curls.MP4 in Resources */,
+				A8B46B1923B0BBE4005B30A7 /* bicep_curls_pose-3.gif in Resources */,
+				A8B46B1123B072FE005B30A7 /* squat_side_lifts_pose.gif in Resources */,
+				A8B46B1323B078A2005B30A7 /* pose.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,9 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B46B1B23B0BCF1005B30A7 /* MyListViewController.swift in Sources */,
 				A8BC88BB239A586300402BA9 /* CameraController.swift in Sources */,
 				9C9A979C238E141E007DEFF9 /* ViewController.swift in Sources */,
 				9C9A97C8238E30C9007DEFF9 /* VideoCell.swift in Sources */,
+				A8B46B0F23B0661D005B30A7 /* ParticlePeripheral.swift in Sources */,
+				A8B46B1D23B0C741005B30A7 /* ListVideoCell.swift in Sources */,
 				A8F2082123A91281004E0204 /* iOSDevCenters+GIF.swift in Sources */,
 				9C9A9798238E141E007DEFF9 /* AppDelegate.swift in Sources */,
 				9C9A979A238E141E007DEFF9 /* SceneDelegate.swift in Sources */,

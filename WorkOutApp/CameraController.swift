@@ -10,8 +10,90 @@ import UIKit
 import AVFoundation
 import AVKit
 import ReplayKit
+import CoreBluetooth
 
-class CameraController: UIViewController {
+class CameraController: UIViewController, CBPeripheralDelegate, CBCentralManagerDelegate {
+    // Properties
+    private var centralManager: CBCentralManager!
+    private var peripheral: CBPeripheral!
+    var times:Int = 0
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        print("Central state update")
+        print(central.state)
+        if central.state != .poweredOn {
+            print("Central is not powered on")
+        } else {
+            print("Central scanning for",ParticlePeripheral.particleHM10);
+            centralManager.scanForPeripherals(withServices: [ParticlePeripheral.particleHM10], options: nil)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        print("before stop scan")
+        // We've found it so stop scan
+        self.centralManager.stopScan()
+
+        // Copy the peripheral instance
+        self.peripheral = peripheral
+        self.peripheral.delegate = self
+
+        // Connect!
+        self.centralManager.connect(self.peripheral, options: nil)
+
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        if peripheral == self.peripheral {
+            print("Connected to your Particle Board")
+            peripheral.discoverServices([ParticlePeripheral.particleHM10])
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print("did Discover Services")
+        if let services = peripheral.services {
+            for service in services {
+                if service.uuid == ParticlePeripheral.particleHM10 {
+                    print("LED service found")
+                    //Now kick off discovery of characteristics
+                    peripheral.discoverCharacteristics(nil, for: service)
+                    return
+                }
+            }
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        print("did Discover Characteristics")
+        if let characteristics = service.characteristics {
+            for characteristic in characteristics {
+                print(characteristic)
+                if characteristic.uuid == ParticlePeripheral.particleFFE1 {
+                    print("FFE1 characteristic found")
+                    peripheral.setNotifyValue(true, for: characteristic)
+                }
+            }
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor charcteristic: CBCharacteristic, error: Error?) {
+        print("did Update Value")
+        switch charcteristic.uuid {
+        case ParticlePeripheral.particleFFE1:
+            let readValue = charcteristic.value!
+            let buffer = [UInt8](readValue)
+            if let string = String(bytes: buffer, encoding: String.Encoding.utf8) {
+                print(string)
+                times += 1
+                ShowMuscle(text: String(format:"Times: %4d", arguments:[times]))
+            } else {
+                print("not a valid UTF-8 sequence")
+            }
+        default:
+            return
+        }
+    }
 
     @IBOutlet weak var cameraView: UIView!
     
@@ -24,9 +106,10 @@ class CameraController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playVideo(name: "video1")
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        playVideo(name: "bicep_curls")
         
-        loadGif(name: "GIFF")
+        loadGif(name: "bicep_curls_pose-3")
         
         ShowMuscle(text: "Test....")
         
@@ -51,7 +134,7 @@ class CameraController: UIViewController {
     
     func playVideo(name: String) {
 
-        let path = Bundle.main.path(forResource: name, ofType: "mp4")!
+        let path = Bundle.main.path(forResource: name, ofType: "MP4")!
         let player = AVPlayer(url: URL(fileURLWithPath: path))
 
         playerViewController.player = player
