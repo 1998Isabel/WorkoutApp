@@ -83,10 +83,11 @@ class CameraController: UIViewController, CBPeripheralDelegate, CBCentralManager
         case ParticlePeripheral.particleFFE1:
             let readValue = charcteristic.value!
             let buffer = [UInt8](readValue)
+
             if let string = String(bytes: buffer, encoding: String.Encoding.utf8) {
                 print(string)
                 times += 1
-                ShowMuscle(text: String(format:"Times: %4d", arguments:[times]))
+                ShowMuscle(text: String(format:"Times: %4d \nStrength: %@", arguments:[times, string]))
             } else {
                 print("not a valid UTF-8 sequence")
             }
@@ -95,6 +96,14 @@ class CameraController: UIViewController, CBPeripheralDelegate, CBCentralManager
         }
     }
 
+    func bytes2Int(_ array:[UInt8]) -> Int {
+        var value : UInt32 = 0
+        let data = NSData(bytes: array, length: array.count)
+        data.getBytes(&value, length: array.count)
+        value = UInt32(bigEndian: value)
+        return Int(value)
+    }
+    
     @IBOutlet weak var cameraView: UIView!
     
     var captureSession: AVCaptureSession?
@@ -149,8 +158,8 @@ class CameraController: UIViewController, CBPeripheralDelegate, CBCentralManager
         let imageData = try? Data(contentsOf: Bundle.main.url(forResource: name, withExtension: "gif")!)
         let advTimeGif = UIImage.gifImageWithData(imageData!)
         let imageView = UIImageView(image: advTimeGif)
-        imageView.frame = CGRect(x: 20.0, y: 200.0, width:
-            self.view.frame.size.width - 40, height: 300.0)
+        imageView.frame = CGRect(x: -435.0, y: 0.0, width:
+            1280.0, height: 720.0)
         view.addSubview(imageView)
     }
     
